@@ -1,0 +1,13 @@
+Vamos organizar essa porra!!!
+=============================
+
+Organizar as pastas e locais de trabalho. ------ OK
+
+Fazer os Exercicios da avaliação "Relembrando o C"(A partir do Ex06)
+
+Começar a fazer o libft.h de maneira decente. (5 funções)
+
+Criar um grupo de estudos.
+
+
+
