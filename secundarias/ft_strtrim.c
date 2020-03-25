@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/25 13:24:48 by esilva-s          #+#    #+#             */
+/*   Updated: 2020/03/25 13:25:30 by esilva-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int in_set(char *c, char const *set){
@@ -18,7 +30,7 @@ int count_not_set(const char *s1, const char *set){
 	total = 0;
 	while (s1[count])
 	{
-		if (!(in_set(s1[count])))
+		if (!(in_set(s1[count], set)))
 			total++;
 		count++;
 	}
@@ -47,7 +59,3 @@ char	*ft_strtrim(char const *s1, char const *set){
 	new[count] = '\0';
 	return (new);
 }
-
-
-
-

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: esilva-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 19:41:44 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/02/05 19:41:47 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/03/25 13:14:11 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,4 @@ void *ft_memmove(void *dst, const void *src, size_t l)
         j++;
     }
     return (a);
-
 }

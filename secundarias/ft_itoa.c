@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/25 13:20:51 by esilva-s          #+#    #+#             */
+/*   Updated: 2020/03/25 13:21:14 by esilva-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_itoa(int n)
@@ -6,7 +18,7 @@ char	*ft_itoa(int n)
 	int	i;
 
 	i = 0;
-	if(!str = malloc((size_n(n) + 1) * sizeof(char)))
+	if(!(str = malloc((size_n(n) + 1) * sizeof(char))))
 		return (NULL);
 	if (n == 0)
 	{

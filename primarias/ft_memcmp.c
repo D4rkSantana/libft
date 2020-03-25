@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/25 13:17:04 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/03/25 13:19:46 by esilva-s         ###   ########.fr       */
+/*   Created: 2020/03/25 12:58:34 by esilva-s          #+#    #+#             */
+/*   Updated: 2020/03/25 13:12:01 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+int		memcmp(const void *s1, const void *s2, size_t n)
 {
-	t_list	*tmp;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	unsigned int	count;
 
-	if (lst)
-		return;
-	while (*lst)
+	str1 = (unsigned char *) s1;
+	str2 = (unsigned char *) s2;
+	count = 0;
+
+	while (count < n)
 	{
-		tmp = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = tmp;
+		if (!(str1[count] == str2[count]))
+			return ((int) (str1[count] - str2[count]));
+		count++;
 	}
+	return (NULL);
 }

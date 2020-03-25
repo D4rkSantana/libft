@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/25 13:22:25 by esilva-s          #+#    #+#             */
+/*   Updated: 2020/03/25 13:22:45 by esilva-s         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
  #include "libft.h"
 
 char **ft_split(char const *s, char c)
@@ -5,7 +17,7 @@ char **ft_split(char const *s, char c)
         char **result;
         unsigned int first;
         unsigned int i;
-        unsigned int j
+        unsigned int j;
 
         i = 0;
         j = 0;
@@ -32,7 +44,7 @@ char **ft_split(char const *s, char c)
 		j++;
                 }
         }
-        result[j] == '\0'
+        result[j] == '\0';
         return (result);
 }
 //Essa função conta quantas palavras tem dentro da string e retorna o valor
