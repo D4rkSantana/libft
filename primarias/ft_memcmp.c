@@ -18,14 +18,13 @@ int		memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*str2;
 	unsigned int	count;
 
-	str1 = (unsigned char *) s1;
-	str2 = (unsigned char *) s2;
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	count = 0;
-
 	while (count < n)
 	{
 		if (!(str1[count] == str2[count]))
-			return ((int) (str1[count] - str2[count]));
+			return ((int)(str1[count] - str2[count]));
 		count++;
 	}
 	return (NULL);

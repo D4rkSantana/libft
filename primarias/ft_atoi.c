@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int	is_space(char *c);
+static int space(char *c);
 
-static int	is_space(char *c)
+static int space(char *c)
 {
 	if (*c == ' ' || *c == '\n' || *c == '\t' ||
 	    *c == '\v' || *c == '\f' || *c == '\r')
@@ -29,7 +29,7 @@ int	ft_atoi(const char *nptr)
 
 	negative = 1;
 	result = 0;
-	while (is_space(nptr))
+	while (space(nptr))
 		nptr++;
 	if (*nptr == '-')
 		negative = -1;

@@ -23,7 +23,7 @@ void	*memchr(const void *s, int c, size_t n)
 	chr = (unsigned char)c;
 	while (count < n)
 	{
-		if(str[count] ==  chr)
+		if (str[count] == chr)
 			return (str[count]);
 		count++;
 	}
