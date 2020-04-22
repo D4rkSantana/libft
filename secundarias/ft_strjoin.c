@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2){
+char	*ft_strjoin(char const *s1, char const *s2)
+{
 	unsigned int	size;
 	unsigned int	count_s;
 	unsigned int	count_newstr;

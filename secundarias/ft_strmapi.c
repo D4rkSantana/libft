@@ -18,9 +18,9 @@ char	*ft_strmapi(char const *a, char (*f)(unsigned int, char))
 	int	i;
 
 	i = 0;
-	if(!(newstr = malloc(strlen(a) * sizeof(char))))
+	if (!(newstr = malloc(strlen(a) * sizeof(char))))
 		return (NULL);
-	while(a[i] != '\0')
+	while (a[i] != '\0')
 	{
 		newstr[i] = f(i, a[i]);
 		i++;

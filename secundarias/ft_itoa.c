@@ -18,14 +18,14 @@ char	*ft_itoa(int n)
 	int	i;
 
 	i = 0;
-	if(!(str = malloc((size_n(n) + 1) * sizeof(char))))
+	if (!(str = malloc((size_n(n) + 1) * sizeof(char))))
 		return (NULL);
 	if (n == 0)
 	{
-		str[i] = (char) 48;
+		str[i] = (char)48;
 		i++;
 	}
-	if(n < 0)
+	if (n < 0)
 	{
 		str[i] = '-';
 		n = n * -1;
@@ -33,7 +33,7 @@ char	*ft_itoa(int n)
 	}
 	while (n > 0)
 	{
-		str[i] = (char) n % 10;
+		str[i] = (char)n % 10;
 		n = n / 10;
 		i++;
 	}
@@ -41,14 +41,14 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-static int size_n(int n)
+static int	size_n(int n)
 {
 	int	len;
 
 	len = 0;
-	if(n == 0)
+	if (n == 0)
 		return (1);
-	if(n < 0)
+	if (n < 0)
 	{
 		n = n * -1;
 		len++;
