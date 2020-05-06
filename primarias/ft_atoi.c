@@ -12,12 +12,10 @@
 
 #include "libft.h"
 
-static int space(char *c);
-
-static int space(char *c)
+static int	ft_space(char *c)
 {
 	if (*c == ' ' || *c == '\n' || *c == '\t' ||
-	    *c == '\v' || *c == '\f' || *c == '\r')
+	*c == '\v' || *c == '\f' || *c == '\r')
 		return (1);
 	return (0);
 }
@@ -29,7 +27,7 @@ int	ft_atoi(const char *nptr)
 
 	negative = 1;
 	result = 0;
-	while (space(nptr))
+	while (ft_space(nptr))
 		nptr++;
 	if (*nptr == '-')
 		negative = -1;
