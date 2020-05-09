@@ -14,9 +14,9 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
+	int		i;
 	char		*a;
 	const char	*b;
-	int		i;
 
 	a = dest;
 	b = src;
