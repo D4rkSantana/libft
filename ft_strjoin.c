@@ -20,10 +20,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char		*newstr;
 
 	if (!s1)
-		return (s1);
+		return (*s1);
 	if (!s2)
-		return (s2);
-	size = ft_strlen(s1) + ft_strlen + 1;
+		return (*s2);
+	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(newstr = malloc(sizeof(char) * size)))
 		return (NULL);
 	count_s = 0;
