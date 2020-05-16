@@ -19,10 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	count_newstr;
 	char		*newstr;
 
-	if (!s1)
-		return (*s1);
-	if (!s2)
-		return (*s2);
+	if (!s1 || !s2)
+		return (NULL);
 	size = ft_strlen(s1) + ft_strlen(s2) + 1;
 	if (!(newstr = malloc(sizeof(char) * size)))
 		return (NULL);

@@ -16,7 +16,7 @@ int	in_set(char *c, char const *set)
 {
 	while (*set)
 	{
-		if (c == *set)
+		if (*c == *set)
 			return (1);
 		set++;
 	}
@@ -27,12 +27,15 @@ int	count_not_set(const char *s1, const char *set)
 {
 	int	count;
 	int	total;
-
+	char	*c;
+ 
 	count = 0;
 	total = 0;
+	c = 0;
 	while (s1[count])
 	{
-		if (!(in_set(s1[count], set)))
+		*c = s1[count];
+		if (!(in_set(c, set)))
 			total++;
 		count++;
 	}
@@ -54,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (*s1)
 	{
-		if (!(in_set(*s1, set)))
+		if (!(in_set((char *)s1, set)))
 			new[count] = *s1;
 		count++;
 		s1++;

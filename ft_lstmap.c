@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*element;
 
 	if (!lst || !del || !f)
-		return ;
+		return (NULL);
 	if (!(element = ft_lstnew(f(lst->content))))
 	{
 		ft_lstclear(&lst, del);
