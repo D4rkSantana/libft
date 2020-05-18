@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	in_set(char *c, char const *set)
+int		in_set(char *c, char const *set)
 {
 	while (*set)
 	{
@@ -23,12 +23,12 @@ int	in_set(char *c, char const *set)
 	return (0);
 }
 
-int	count_not_set(const char *s1, const char *set)
+int		count_not_set(const char *s1, const char *set)
 {
-	int	count;
-	int	total;
+	int		count;
+	int		total;
 	char	*c;
- 
+
 	count = 0;
 	total = 0;
 	c = 0;
@@ -44,8 +44,8 @@ int	count_not_set(const char *s1, const char *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	count;
-	int	size;
+	int		count;
+	int		size;
 	char	*new;
 
 	if (set == NULL || s1 == NULL)

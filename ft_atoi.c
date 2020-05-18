@@ -21,10 +21,10 @@ static int	ft_space(const char *c)
 	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
-	int	result;
-	int	negative;
+	int		result;
+	int		negative;
 
 	negative = 1;
 	result = 0;
