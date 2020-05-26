@@ -81,6 +81,6 @@ char				**ft_split(char const *s, char c)
 		ft_strlcpy(result[count], word, size_word + 1);
 		count++;
 	}
-	result[count] = '\0';
+	result[count] = 0;
 	return (result);
 }
