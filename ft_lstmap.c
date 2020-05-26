@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:17:32 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/03/25 13:20:37 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 16:50:06 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*result;
-	t_list	*element;
+	t_list	*next_element;
+	t_list	*current;
 
-	if (!lst || !del || !f)
+
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (!(element = ft_lstnew(f(lst->content))))
-	{
-		ft_lstclear(&lst, del);
+	result = ft_lstnew(f(lst->content));
+	if (!(result))
 		return (NULL);
-	}
-	result = element;
+	current = result;
 	lst = lst->next;
 	while (lst)
 	{
-		if (!(element = ft_lstnew(f(lst->content))))
+		if ((next_element = ft_lstnew(f(lst->content))) == NULL)
 		{
-			ft_lstclear(&lst, del);
-			ft_lstclear(&lst, del);
-			break ;
+			ft_lstclear(&result, del);
+			return (NULL);
 		}
+		current->next = next_element;
+		current = next_element;
 		lst = lst->next;
-		ft_lstadd_back(&result, element);
 	}
 	return (result);
 }

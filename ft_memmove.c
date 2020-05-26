@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 19:41:44 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 13:59:03 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 14:44:07 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	size_t					i;
 
 	i = 0;
-	if (!src)
-		return (NULL);
 	a = (unsigned char *)dst;
 	b = (unsigned char *)src;
 	if (a > b)
@@ -28,9 +26,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 		while (++i <= n)
 			a[n - i] = b[n - i];
 	}
-	else
-	{
-		ft_memcpy(a, b, n);
-	}
-	return (a);
+	else if (a < b)
+		ft_memcpy(dst, src, n);
+	return (dst);
 }

@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 12:57:37 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/04/20 16:27:00 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 15:47:47 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_calloc(size_t len, size_t n)
 {
-	char *s;
+	void	*str;
+	size_t	i;
 
-	if (!len || !n)
-		return (NULL);
-	s = malloc(len * n);
-	if (!s)
-		return (NULL);
-	ft_bzero(s, len);
-	return ((void *)s);
+	i = 0;
+	str = malloc(len * n);
+	if (str == 0)
+		return (0);
+	ft_bzero(str, (len * n));
+	return (str);
 }

@@ -6,7 +6,7 @@
 /*   By: esilva-s <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 16:29:28 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 14:03:22 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 14:55:31 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*a;
 	unsigned char	*b;
 
-	if (!dst)
+	if (!dst && !src)
 		return (NULL);
 	a = (unsigned char *)dst;
 	b = (unsigned char *)src;
