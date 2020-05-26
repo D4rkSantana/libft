@@ -12,70 +12,75 @@
 
 #include "libft.h"
 
-static int			count_total(char const *s, char c)
+static unsigned int	count_total(char const *s, char c)
 {
-	int				i;
-	int				result;
-	int				first;
+	unsigned int	count;
+	unsigned int	total;
 
-	first = 1;
-	result = 1;
-	i = 0;
-	while (s[i])
+	count = 0;
+	total = 0;
+	if (!s[count])
+		return (0);
+	while (s[count] && s[count] == c)
+		count++;
+	while (s[count])
 	{
-		if (first && s[i] != c)
+		if (s[count] == c)
 		{
-			first = 0;
-			result++;
+			total++;
+			while (s[count] && s[count] == c)
+				count++;
+			continue ;
 		}
-		if (s[i] == c && s[i + 1] != c)
-			result++;
-		i++;
+		count++;
 	}
-	return (result);
+	if (s[count - 1] != c)
+		total++;
+	return (total);
 }
 
-static int			count_word(char const *s, char c)
+static void			next_word(char **word, unsigned int *size_word, char c)
 {
-	int				i;
+	unsigned int	count;
 
-	i = 0;
-	while (*s)
+	count = 0;
+	*word += *size_word;
+	*size_word = 0;
+	while (**word && **word == c)
+		(*word)++;
+	while ((*word)[count])
 	{
-		if (*s != c)
-			i++;
-		else
-			return (i);
-		s++;
+		if ((*word)[count] == c)
+			return ;
+		(*size_word)++;
+		count++;
 	}
-	return (i);
 }
 
 char				**ft_split(char const *s, char c)
 {
 	char			**result;
-	unsigned int	i;
-	unsigned int	j;
+	char			*word;
+	unsigned int	size_word;
+	unsigned int	size_total;
+	unsigned int	count;
 
-	i = 0;
-	j = 0;
-	result = malloc(count_total(s, c) * sizeof(char *));
-	while (!s[i] == '\0')
+	if (!s)
+		return (NULL);
+	count = 0;
+	size_word = 0;
+	word = (char *)s;
+	size_total = count_total(s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (size_total + 1))))
+		return (NULL);
+	while (count < size_total)
 	{
-		if (s[i] == c)
-			i++;
-		else
-		{
-			result[j] = malloc(count_word(&s[i], c) * sizeof(char));
-			while (s[i] != c)
-			{
-				*result[j] = s[i];
-				i++;
-				result[j]++;
-			}
-			j++;
-		}
+		next_word(&word, &size_word, c);
+		if (!(result[count] = (char *)malloc(sizeof(char) * (size_word + 1))))
+			return (NULL);
+		ft_strlcpy(result[count], word, size_word + 1);
+		count++;
 	}
-	*result[j] = '\0';
+	result[count] = '\0';
 	return (result);
 }

@@ -12,56 +12,45 @@
 
 #include "libft.h"
 
-int		in_set(char *c, char const *set)
+static int	in_start_or_end(const char *s, const char *set, int x)
 {
-	while (*set)
-	{
-		if (*c == *set)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
-int		count_not_set(const char *s1, const char *set)
-{
+	int		size;
 	int		count;
-	int		total;
-	char	*c;
+	int		result;
 
 	count = 0;
-	total = 0;
-	c = 0;
-	while (s1[count])
+	size = ft_strlen(s);
+	while (count < size)
 	{
-		*c = s1[count];
-		if (!(in_set(c, set)))
-			total++;
+		if (x && ft_strchr(set, s[count]) == NULL)
+			break ;
+		if (!x && ft_strchr(set, s[size - count - 1]) == NULL)
+			break ;
 		count++;
 	}
-	return (total);
+	if (x)
+		result = count;
+	if (!x)
+		result = size - count;
+	return (result);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
-	int		count;
-	int		size;
+	int		start;
+	int		end;
 	char	*new;
 
-	if (set == NULL || s1 == NULL)
+	if (set == NULL)
+		return (ft_strdup(s1));
+	if (set == NULL)
 		return (NULL);
-	size = 0;
-	count = 0;
-	size = count_not_set(s1, set) + 1;
-	if (!(new = malloc(sizeof(char) * size)))
+	start = in_start_or_end(s1, set, 1);
+	end = in_start_or_end(s1, set, 0);
+	if (start >= end)
+		return (ft_strdup(""));
+	if (!(new = (char *)malloc(sizeof(char) * (end - start + 1) + 1)))
 		return (NULL);
-	while (*s1)
-	{
-		if (!(in_set((char *)s1, set)))
-			new[count] = *s1;
-		count++;
-		s1++;
-	}
-	new[count] = '\0';
+	ft_strlcpy(new, s1 + start, end - start + 1);
 	return (new);
 }

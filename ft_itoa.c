@@ -35,28 +35,25 @@ static int		size_n(int n)
 char			*ft_itoa(int n)
 {
 	char		*str;
-	int			i;
+	int			size;
 
-	i = 0;
-	if (!(str = malloc((size_n(n) + 1) * sizeof(char))))
+	size = size_n(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (!(str = malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	if (n == 0)
-	{
-		str[i] = (char)48;
-		i++;
-	}
+	str[size] = '\0';
 	if (n < 0)
 	{
-		str[i] = '-';
-		n = n * -1;
-		i++;
+		n = -n;
+		str[0] = '-';
 	}
-	while (n > 0)
+	while (n > 9)
 	{
-		str[i] = (char)n % 10;
+		str[size - 1] = (n % 10) + '0';
 		n = n / 10;
-		i++;
+		size--;
 	}
-	str[i] = '\0';
+	str[size - 1] = n + '0';
 	return (str);
 }
