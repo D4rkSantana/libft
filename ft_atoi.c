@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 12:57:15 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/03/25 13:10:33 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 23:24:09 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,23 @@ static int	ft_space(const char *c)
 	return (0);
 }
 
-int			ft_atoi(const char *nptr)
+int			ft_atoi(const char *str)
 {
 	int		result;
 	int		negative;
 
 	negative = 1;
 	result = 0;
-	while (ft_space(nptr))
-		nptr++;
-	if (*nptr == '-')
+	while (ft_space(str))
+		str++;
+	if (*str == '-')
 		negative = -1;
-	if (*nptr == '-' || *nptr == '+')
-		nptr++;
-	while (*nptr && *nptr >= '0' && *nptr <= '9')
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		result = result * 10 + (*nptr - 48);
-		nptr++;
+		result = result * 10 + (*str - 48);
+		str++;
 	}
 	result = result * negative;
 	return (result);

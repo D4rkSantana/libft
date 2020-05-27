@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:24:48 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 16:13:24 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 22:23:24 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	in_end(const char *s, const char *set)
 {
 	int		size;
 	int		count;
-	
+
 	count = 0;
 	size = ft_strlen(s);
 	while (count < size)

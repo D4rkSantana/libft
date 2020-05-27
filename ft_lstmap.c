@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:17:32 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 16:50:06 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 22:22:06 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*result;
 	t_list	*next_element;
 	t_list	*current;
-
 
 	if (lst == NULL || f == NULL)
 		return (NULL);

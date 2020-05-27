@@ -6,19 +6,19 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 18:45:25 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/03/25 13:00:35 by esilva-s         ###   ########.fr       */
+/*   Updated: 2020/05/26 23:00:26 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	unsigned int		i;
 	unsigned char		*a;
 	unsigned const char	*b;
 
-	a = dest;
+	a = dst;
 	b = src;
 	i = 0;
 	while (i < n)
