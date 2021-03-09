@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strindexcpy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/25 12:57:37 by esilva-s          #+#    #+#             */
-/*   Updated: 2021/03/09 11:56:40 by esilva-s         ###   ########.fr       */
+/*   Created: 2021/03/09 12:01:12 by esilva-s          #+#    #+#             */
+/*   Updated: 2021/03/09 12:03:47 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char			*ft_strindexcpy(char **save, char *str, size_t index)
 {
-	char	*str;
-	size_t	x;
-	size_t	s_total;
+	size_t			count;
+	char			*dst;
+	size_t			size;
 
-	x = 0;
-	s_total = count * size;
-	if (!(str = malloc(s_total)))
-		return (0);
-	if (s_total > 10000)
-		x = s_total - 9000;
-	while (x < s_total)
+	count = 0;
+	size = ft_strlen(str);
+	dst = (char *)ft_calloc(sizeof(char), (size - (index)) + 1);
+	while (count < size && index < size)
 	{
-		str[x] = 0;
-		x++;
+		dst[count] = str[index];
+		index++;
+		count++;
 	}
-	return ((void *)str);
+	dst[count] = '\0';
+	*save = dst;
+	return (dst);
 }

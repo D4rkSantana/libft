@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin_free1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/25 12:57:37 by esilva-s          #+#    #+#             */
-/*   Updated: 2021/03/09 11:56:40 by esilva-s         ###   ########.fr       */
+/*   Created: 2021/03/09 12:02:51 by esilva-s          #+#    #+#             */
+/*   Updated: 2021/03/09 12:03:19 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char			    *ft_strjoin_free1(char *s1, char const *s2, size_t size2)
 {
-	char	*str;
-	size_t	x;
-	size_t	s_total;
+	unsigned int	size;
+	unsigned int	size1;
+	char			*new;
 
-	x = 0;
-	s_total = count * size;
-	if (!(str = malloc(s_total)))
-		return (0);
-	if (s_total > 10000)
-		x = s_total - 9000;
-	while (x < s_total)
-	{
-		str[x] = 0;
-		x++;
-	}
-	return ((void *)str);
+	if (!s1 || !s2)
+		return (NULL);
+	size1 = ft_strlen(s1);
+	size = size1 + size2 + 1;
+	if (!(new = (char *)ft_calloc(sizeof(char), size)))
+		return (NULL);
+	ft_strlcpy(new, s1, size1 + 1);
+	ft_strlcpy(new + size1, s2, size2 + 1);
+	ft_strdel(&s1);
+	return (new);
 }

@@ -6,12 +6,13 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:04:24 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 23:25:07 by esilva-s         ###   ########.fr       */
+/*   Updated: 2021/03/09 12:09:53 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFFER_SIZE 32
 
 # include <unistd.h>
 # include <stdlib.h>
@@ -67,4 +68,9 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int					get_next_line(int fd, char **line);
+void				ft_strdel(char **pont);
+int					ft_linebreak(char *str);
+char				*ft_strindexcpy(char **save, char *str, size_t index);
+char			    *ft_strjoin_free1(char *s1, char const *s2, size_t size2);
 #endif
