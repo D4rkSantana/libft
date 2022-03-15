@@ -6,17 +6,17 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:07:55 by esilva-s          #+#    #+#             */
-/*   Updated: 2021/03/09 12:03:37 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:17:09 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			get_line(int fd, char *save, char **temp)
+static int	get_line(int fd, char *save, char **temp)
 {
-	int				return_read;
-	char			*buff;
-	char			*line;
+	int		return_read;
+	char	*buff;
+	char	*line;
 
 	buff = (char *)ft_calloc(sizeof(char), BUFFER_SIZE + 1);
 	line = (char *)ft_calloc(sizeof(char), BUFFER_SIZE + 1);
@@ -41,10 +41,10 @@ static int			get_line(int fd, char *save, char **temp)
 	return (return_read);
 }
 
-static char			*get_result(int r_read, char *temp, char **save)
+static char	*get_result(int r_read, char *temp, char **save)
 {
-	char			*line;
-	int				index;
+	char	*line;
+	int		index;
 
 	if (r_read > 0)
 		index = ft_linebreak(temp);
@@ -58,13 +58,14 @@ static char			*get_result(int r_read, char *temp, char **save)
 			ft_strdel(save);
 		*save = ft_strindexcpy(save, temp, index + 1);
 	}
-	if (!(line = (char *)ft_calloc(sizeof(char), index + 1)))
+	line = (char *)ft_calloc(sizeof(char), index + 1);
+	if (line == NULL)
 		return (NULL);
 	ft_strlcpy(line, temp, index + 1);
 	return (line);
 }
 
-int					get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char		*save;
 	char			*temp;

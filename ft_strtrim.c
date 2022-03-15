@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:24:48 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 22:23:24 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 18:58:16 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	in_end(const char *s, const char *set)
 	return (size - count);
 }
 
-char		*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;

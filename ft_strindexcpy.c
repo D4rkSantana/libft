@@ -6,13 +6,13 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 12:01:12 by esilva-s          #+#    #+#             */
-/*   Updated: 2021/03/09 12:03:47 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:14:40 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strindexcpy(char **save, char *str, size_t index)
+char	*ft_strindexcpy(char **save, char *str, size_t index)
 {
 	size_t			count;
 	char			*dst;

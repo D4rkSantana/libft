@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:04:24 by esilva-s          #+#    #+#             */
-/*   Updated: 2021/03/09 12:09:53 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:13:18 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -72,5 +72,5 @@ int					get_next_line(int fd, char **line);
 void				ft_strdel(char **pont);
 int					ft_linebreak(char *str);
 char				*ft_strindexcpy(char **save, char *str, size_t index);
-char			    *ft_strjoin_free1(char *s1, char const *s2, size_t size2);
+char				*ft_strjoin_free1(char *s1, char const *s2, size_t size2);
 #endif

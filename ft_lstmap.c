@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_lstmap.c                                         :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:17:32 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 22:22:06 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:10:55 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst = lst->next;
 	while (lst)
 	{
-		if ((next_element = ft_lstnew(f(lst->content))) == NULL)
+		next_element = ft_lstnew(f(lst->content));
+		if (next_element == NULL)
 		{
 			ft_lstclear(&result, del);
 			return (NULL);

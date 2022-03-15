@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 12:57:15 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 23:24:09 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:11:41 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_space(const char *c)
 	return (0);
 }
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		result;
 	int		negative;

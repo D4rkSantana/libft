@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:22:25 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/03/25 13:22:45 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/03/06 19:16:00 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static unsigned int	count_total(char const *s, char c)
 	return (total);
 }
 
-static void			next_word(char **word, unsigned int *size_word, char c)
+static void	next_word(char **word, unsigned int *size_word, char c)
 {
 	unsigned int	count;
 
@@ -57,7 +57,7 @@ static void			next_word(char **word, unsigned int *size_word, char c)
 	}
 }
 
-char				**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char			**result;
 	char			*word;
@@ -65,18 +65,18 @@ char				**ft_split(char const *s, char c)
 	unsigned int	size_total;
 	unsigned int	count;
 
-	if (!s)
-		return (NULL);
 	count = 0;
 	size_word = 0;
 	word = (char *)s;
 	size_total = count_total(s, c);
-	if (!(result = (char **)malloc(sizeof(char *) * (size_total + 1))))
+	result = (char **)malloc(sizeof(char *) * (size_total + 1));
+	if (!s || result == NULL)
 		return (NULL);
 	while (count < size_total)
 	{
 		next_word(&word, &size_word, c);
-		if (!(result[count] = (char *)malloc(sizeof(char) * (size_word + 1))))
+		result[count] = (char *)malloc(sizeof(char) * (size_word + 1));
+		if (result == NULL)
 			return (NULL);
 		ft_strlcpy(result[count], word, size_word + 1);
 		count++;
