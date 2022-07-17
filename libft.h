@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/29 15:04:24 by esilva-s          #+#    #+#             */
-/*   Updated: 2022/03/06 19:13:18 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/07/11 04:22:01 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_have_space(const char *str);
 char				*ft_itoa(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
@@ -41,6 +42,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -68,9 +70,10 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
-int					get_next_line(int fd, char **line);
+int					ft_get_next_line(int fd, char **line);
 void				ft_strdel(char **pont);
 int					ft_linebreak(char *str);
 char				*ft_strindexcpy(char **save, char *str, size_t index);
 char				*ft_strjoin_free1(char *s1, char const *s2, size_t size2);
+int					ft_list_len(char **list_args);
 #endif

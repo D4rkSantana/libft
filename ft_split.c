@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/25 13:22:25 by esilva-s          #+#    #+#             */
-/*   Updated: 2022/03/06 19:16:00 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/07/11 05:27:41 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ char	**ft_split(char const *s, char c)
 	while (count < size_total)
 	{
 		next_word(&word, &size_word, c);
-		result[count] = (char *)malloc(sizeof(char) * (size_word + 1));
+		result[count] = (char *)ft_calloc(sizeof(char), (size_word + 1));
 		if (result == NULL)
 			return (NULL);
 		ft_strlcpy(result[count], word, size_word + 1);

@@ -6,7 +6,7 @@
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 16:07:55 by esilva-s          #+#    #+#             */
-/*   Updated: 2022/03/06 19:17:09 by esilva-s         ###   ########.fr       */
+/*   Updated: 2022/07/10 22:34:02 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char	*get_result(int r_read, char *temp, char **save)
 	return (line);
 }
 
-int	get_next_line(int fd, char **line)
+int	ft_get_next_line(int fd, char **line)
 {
 	static char		*save;
 	char			*temp;

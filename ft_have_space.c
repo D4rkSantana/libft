@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_have_space.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esilva-s <esilva-s@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/25 13:17:04 by esilva-s          #+#    #+#             */
-/*   Updated: 2020/05/26 00:54:20 by esilva-s         ###   ########.fr       */
+/*   Created: 2022/07/10 22:29:38 by esilva-s          #+#    #+#             */
+/*   Updated: 2022/07/10 22:43:05 by esilva-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_have_space(const char *str)
 {
-	t_list	*tmp;
-	t_list	*tmp2;
+	int	size;
+	int	count;
 
-	if (!lst || !*lst || !del)
-		return ;
-	tmp = *lst;
-	while (tmp)
+	size = ft_strlen(str);
+	count = 0;
+	while (count < size)
 	{
-		tmp2 = tmp->next;
-		ft_lstdelone(tmp, del);
-		tmp = tmp2;
+		if (ft_isspace(str[count]))
+			return (1);
+		count++;
 	}
-	*lst = NULL;
+	return (0);
 }
