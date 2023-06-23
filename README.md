@@ -1,19 +1,47 @@
-# Libft - Meu Grimorio de Magias em C #
 
-![Imagem retratando um grimorio](https://pm1.narvii.com/6554/1502c17be814d72288e310d652ff4acb1dd5234e_hq.jpg)
+# Libft
 
-Essa biblioteca foi criada originalmente para o projeto **Libft** da escola 42.
-Expandido com o projeto **get_next_line** e outras funções pessoas.
+Libft é um projeto da grade curricular da 42 Ecole que baseia se em recriar funções classicas e muito ultilizadas das bibliotecas padrões da linguagem C
 
-Como copilar para o uso?
+O proposito desse projeto é compreender profundamente o funcionamento de programas, funções e conceitos base da programação, assim como conhecer ferramentas e bibliotecas base do C.
+
+
+## Como obter e compilar?
+```
+git clone https://github.com/D4rkSantana/libft.git
+```
+```
+cd libft
+```
+```
+make cclean
+```
+## Aprendizados
+
+Linguagem C, Arrays, Funções, structs, tipos primitivos, Headers, prototipos, e etc...
+
+
+## Referência
+
+ - [42 São Paulo](https://www.42sp.org.br/)
+ - [stdlib.h — Linux manual page](https://man7.org/linux/man-pages/man0/stdlib.h.0p.html)
+ - [unistd.h — Linux manual page](https://man7.org/linux/man-pages/man0/unistd.h.0p.html)
+
+
+## Uso/Exemplos
+
+```c
+#include "libft.h"
 
 ```
-make
-make clean
-```
 
-pronto, só utilizar o libft.a em seu projeto.
 
-Os pdfs com os projetos originais do **libft** e **get_next_line** estão contidos na pasta **"docs"**
+## Autores
 
-#### By esilva-s ####
+- [Emerson Silva S](https://github.com/D4rkSantana)
+
+
+## Etiquetas
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
