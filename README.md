@@ -6,6 +6,13 @@ Libft é um projeto da grade curricular da 42 Ecole que baseia se em recriar fun
 O proposito desse projeto é compreender profundamente o funcionamento de programas, funções e conceitos base da programação, assim como conhecer ferramentas e bibliotecas base do C.
 
 
+## Status
+
+Finalizado e Aprovado
+![aprovado 115/100](docs/libft_check.PNG)
+
+biblioteca expandida com novas funções e o ft_get_next_line()
+
 ## Como obter e compilar?
 ```
 git clone https://github.com/D4rkSantana/libft.git
@@ -18,7 +25,7 @@ make cclean
 ```
 ## Aprendizados
 
-Linguagem C, Arrays, Funções, structs, tipos primitivos, Headers, prototipos, e etc...
+Linguagem C, Arrays, Funções, structs, tipos primitivos, Headers, prototipos, alocação de memoria, ponteiros, e Muitos outros.
 
 
 ## Referência
