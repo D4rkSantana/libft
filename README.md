@@ -9,9 +9,12 @@ O proposito desse projeto é compreender profundamente o funcionamento de progra
 ## Status
 
 Finalizado e Aprovado
+
 ![aprovado 115/100](docs/libft_check.PNG)
 
 biblioteca expandida com novas funções e o ft_get_next_line()
+
+
 
 ## Como obter e compilar?
 ```
